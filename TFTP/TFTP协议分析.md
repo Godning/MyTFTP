@@ -14,15 +14,15 @@ TFTP有5种报文格式：
 						 
 ***
 所以，我们可以得到：
-'''C
+`
 	#define TFTP_RRQ	1
 	#define TFTP_WRQ	2
 	#define TFTP_DATA	3
 	#define TFTP_ACK	4
 	#define TFTP_ERROR	5
-'''
+`
 ### 头文件结构
-'''C
+`
 	typedef struct tftpheader
 	{
 		unsigned short tftp_opcode; //操作码
@@ -34,5 +34,5 @@ TFTP有5种报文格式：
 		}tftp_message;
 		char tftp_data[1]; //数据或错误字符串
 	}
-'''	
+`
 					 				   	
