@@ -15,7 +15,6 @@ TFTP有5种报文格式：
 ***
 所以，我们可以得到：
 
-`
 
 	#define TFTP_RRQ	1
 	#define TFTP_WRQ	2
@@ -26,7 +25,6 @@ TFTP有5种报文格式：
 `
 ### 头文件结构
 
-`
 
 	typedef struct tftpheader
 	{
@@ -40,5 +38,4 @@ TFTP有5种报文格式：
 		char tftp_data[1]; //数据或错误字符串
 	}
 	
-`
 					 				   	
