@@ -14,22 +14,25 @@ TFTP有5种报文格式：
 						 
 ***
 所以，我们可以得到：
-#define TFTP_RRQ	1
-#define TFTP_WRQ	2
-#define TFTP_DATA	3
-#define TFTP_ACK	4
-#define TFTP_ERROR	5
-
+'''C
+	#define TFTP_RRQ	1
+	#define TFTP_WRQ	2
+	#define TFTP_DATA	3
+	#define TFTP_ACK	4
+	#define TFTP_ERROR	5
+'''
 ### 头文件结构
-typedef struct tftpheader
-{
-	unsigned short tftp_opcode; //操作码
-	union
+'''C
+	typedef struct tftpheader
 	{
-		unsigned short tftp_block; //块号
-		unsigned short tftp_error_code; //错误码
-		char tftp_stuff[1]; //数据包填充物
-	}tftp_message;
-	char tftp_data[1]; //数据或错误字符串
-}
+		unsigned short tftp_opcode; //操作码
+		union
+		{
+			unsigned short tftp_block; //块号
+			unsigned short tftp_error_code; //错误码
+			char tftp_stuff[1]; //数据包填充物
+		}tftp_message;
+		char tftp_data[1]; //数据或错误字符串
+	}
+'''	
 					 				   	
